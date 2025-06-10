@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard" role="main" id="dashboard-root">
+      <nav class="sidebar" aria-label="Sidebar navigation">
+        <div class="sidebar-toggle-button">
+          <button
+            aria-label="Toggle sidebar"
+            aria-expanded="true"
+            id="sidebarToggle"
+            class="toggle-btn"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div class="nav-links" role="menu">
+          <a
+            href="data _guru/data_guru.html"
+            data-icon="👩‍🏫"
+            role="menuitem"
+            tabindex="0"
+            >Data Guru</a
+          >
+          <a
+            href="data_siswa/data_siswa.html"
+            data-icon="👨‍🎓"
+            role="menuitem"
+            tabindex="0"
+            >Data Siswa</a
+          >
+          <a
+            href="perkembangan_siswa/kelas_ps_halaqoh.html"
+            data-icon="📊"
+            role="menuitem"
+            tabindex="0"
+            >Perkembangan Tahsin</a
+          >
+          <a href="#ujian" data-icon="📝" role="menuitem" tabindex="0">Ujian</a>
+          <a
+            href="#riwayat-pembelajaran"
+            data-icon="📚"
+            role="menuitem"
+            tabindex="0"
+            >Riwayat Pembelajaran</a
+          >
+        </div>
+        <div class="profile">
+          <img
+            src="https://ui-avatars.com/api/?name=Admin"
+            alt="Foto Profil Admin"
+          />
+          <div class="profile-info">
+            <div class="name">Admin Nama</div>
+          </div>
+          <button class="logout-button" aria-label="Logout">Logout</button>
+        </div>
+      </nav>
+      <section class="main-content" aria-label="Halaman Beranda">
+        <div class="logo-container" aria-label="Logo Instansi">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Coat_of_arms_of_Indonesia.svg/1024px-Coat_of_arms_of_Indonesia.svg.png"
+            alt="Logo Instansi"
+          />
+        </div>
+        <h1>Selamat Datang di Halaman Admin</h1>
+        <p class="welcome-text">
+          Ringkasan data dan perkembangan sistem secara global.
+        </p>
+
+        <div class="summary-cards" aria-label="Ringkasan data global">
+          <article class="card" id="data-guru" tabindex="0">
+            <h2 class="card-title">Data Guru</h2>
+            <div class="card-value" id="guru-count">125</div>
+          </article>
+          <article class="card" id="data-siswa" tabindex="0">
+            <h2 class="card-title">Data Siswa</h2>
+            <div class="card-value" id="siswa-count">560</div>
+          </article>
+        </div>
+
+        <div class="charts-section">
+          <section
+            class="chart-card"
+            id="perkembangan-tahsin"
+            tabindex="0"
+            aria-label="Grafik Perkembangan Tahsin"
+          >
+            <h2>Grafik Perkembangan Tahsin</h2>
+            <canvas
+              id="tahsinChart"
+              width="600"
+              height="300"
+              aria-describedby="tahsinChartDesc"
+            ></canvas>
+            <p id="tahsinChartDesc" class="sr-only">
+              Grafik garis yang menunjukkan perkembangan Jilid 1, 2, 3, Al
+              Qur'an, Gharib dan Tajwid dalam Tahsin.
+            </p>
+          </section>
+
+          <section
+            class="chart-card"
+            id="perkembangan-tahfidz"
+            tabindex="0"
+            aria-label="Grafik Perkembangan Tahfidz Siswa"
+          >
+            <h2>Grafik Perkembangan Tahfidz Siswa</h2>
+            <canvas
+              id="tahfidzChart"
+              width="600"
+              height="300"
+              aria-describedby="tahfidzChartDesc"
+            ></canvas>
+            <p id="tahfidzChartDesc" class="sr-only">
+              Grafik garis yang menunjukkan perkembangan Tahfidz siswa
+              berdasarkan Juz 30 (Tahfidz 1-4), Juz 29 (Rubu' 1-4), dan Juz 1
+              (Rubu' 1-4).
+            </p>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script>
+      const dashboardRoot = document.getElementById("dashboard-root");
+      const sidebarToggleBtn = document.getElementById("sidebarToggle");
+
+      // Update aria-expanded based on state
+      function updateAriaExpanded(isExpanded) {
+        sidebarToggleBtn.setAttribute(
+          "aria-expanded",
+          isExpanded ? "true" : "false"
+        );
+      }
+
+      sidebarToggleBtn.addEventListener("click", () => {
+        const isCollapsed = dashboardRoot.classList.toggle("sidebar-collapsed");
+        updateAriaExpanded(!isCollapsed);
+      });
+
+      // Init aria-expanded
+      updateAriaExpanded(true);
+
+      // Data for Tahsin chart
+      const tahsinData = {
+        labels: [
+          "Jilid 1",
+          "Jilid 2",
+          "Jilid 3",
+          "Al Qur'an",
+          "Gharib",
+          "Tajwid",
+        ],
+        datasets: [
+          {
+            label: "Perkembangan Tahsin",
+            data: [70, 85, 60, 90, 75, 80],
+            borderColor: "#2563eb",
+            backgroundColor: "rgba(37, 99, 235, 0.2)",
+            fill: true,
+            tension: 0.3,
+            pointRadius: 6,
+            pointHoverRadius: 8,
+            borderWidth: 3,
+            hoverBorderWidth: 4,
+            cubicInterpolationMode: "monotone",
+          },
+        ],
+      };
+
+      // Data for Tahfidz chart
+      const tahfidzData = {
+        labels: [
+          "Juz 30 - Tahfidz 1",
+          "Juz 30 - Tahfidz 2",
+          "Juz 30 - Tahfidz 3",
+          "Juz 30 - Tahfidz 4",
+          "Juz 29 - Rubu' 1",
+          "Juz 29 - Rubu' 2",
+          "Juz 29 - Rubu' 3",
+          "Juz 29 - Rubu' 4",
+          "Juz 1 - Rubu' 1",
+          "Juz 1 - Rubu' 2",
+          "Juz 1 - Rubu' 3",
+          "Juz 1 - Rubu' 4",
+        ],
+        datasets: [
+          {
+            label: "Perkembangan Tahfidz",
+            data: [25, 45, 70, 60, 35, 55, 50, 40, 65, 70, 60, 75],
+            borderColor: "#111827",
+            backgroundColor: "rgba(17, 24, 39, 0.15)",
+            fill: true,
+            tension: 0.25,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            borderWidth: 2.5,
+            hoverBorderWidth: 3.5,
+            cubicInterpolationMode: "monotone",
+          },
+        ],
+      };
+
+      // Chart options common
+      const chartOptions = {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false,
+          },
+          tooltip: {
+            mode: "nearest",
+            intersect: false,
+            padding: 8,
+            backgroundColor: "#2563eb",
+            titleColor: "white",
+            bodyColor: "white",
+            cornerRadius: 6,
+            displayColors: false,
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              color: "#6b7280",
+              stepSize: 20,
+              font: {
+                size: 12,
+                weight: "600",
+                family: "Inter, sans-serif",
+              },
+            },
+            grid: {
+              color: "#e5e7eb",
+              borderDash: [5, 5],
+            },
+          },
+          x: {
+            ticks: {
+              color: "#6b7280",
+              font: {
+                size: 12,
+                family: "Inter, sans-serif",
+              },
+            },
+            grid: {
+              display: false,
+            },
+          },
+        },
+      };
+
+      // Create Tahsin chart
+      const ctxTahsin = document.getElementById("tahsinChart").getContext("2d");
+      const tahsinChart = new Chart(ctxTahsin, {
+        type: "line",
+        data: tahsinData,
+        options: chartOptions,
+      });
+
+      // Create Tahfidz chart
+      const ctxTahfidz = document
+        .getElementById("tahfidzChart")
+        .getContext("2d");
+      const tahfidzChart = new Chart(ctxTahfidz, {
+        type: "line",
+        data: tahfidzData,
+        options: chartOptions,
+      });
+    </script>
+  </body>
+</html>

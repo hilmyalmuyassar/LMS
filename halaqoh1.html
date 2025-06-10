@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perkembangan Siswa</title>
+    <link href="../../css/halaqoh1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="nav-left">
+          <button id="btn-beranda" aria-label="Beranda">Beranda</button>
+        </div>
+        <div
+          class="nav-right"
+          role="tablist"
+          aria-label="Navigasi halaman perkembangan siswa"
+        >
+          <a
+            href="#"
+            class="nav-link active"
+            id="tab-tahsin"
+            role="tab"
+            aria-selected="true"
+            tabindex="0"
+            >Tahsin</a
+          >
+          <a
+            href="#"
+            class="nav-link"
+            id="tab-tahfidz"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            >Tahfidz</a
+          >
+        </div>
+        <div class="profile-container" aria-label="Profil Guru">
+          <img
+            src="https://i.pravatar.cc/40"
+            alt="Foto Profil Guru"
+            class="profile-photo"
+          />
+          <span class="profile-name">Ustadzah Siti Nurhaliza</span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Perkembangan Siswa</h1>
+
+      <!-- Tahsin section -->
+      <section id="section-tahsin" role="tabpanel" aria-labelledby="tab-tahsin">
+        <form id="form-perkembangan">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="3" class="col-nama" scope="col">Nama</th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Juli"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Juli"
+                  >
+                    Juli
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Agustus"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Agustus"
+                  >
+                    Agustus
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="September"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan September"
+                  >
+                    September
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Oktober"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Oktober"
+                  >
+                    Oktober
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="November"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan November"
+                  >
+                    November
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Desember"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Desember"
+                  >
+                    Desember
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Januari"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Januari"
+                  >
+                    Januari
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Februari"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Februari"
+                  >
+                    Februari
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Maret"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Maret"
+                  >
+                    Maret
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="April"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan April"
+                  >
+                    April
+                  </button>
+                </th>
+                <th
+                  colspan="2"
+                  class="month-header"
+                  scope="colgroup"
+                  data-month="Mei"
+                >
+                  <button
+                    type="button"
+                    class="month-submit-btn"
+                    aria-label="Submit data bulan Mei"
+                  >
+                    Mei
+                  </button>
+                </th>
+              </tr>
+              <tr>
+                <!-- Subheader Jilid & Halaman -->
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+                <th class="sub-header" scope="col">Jilid</th>
+                <th class="sub-header" scope="col">Halaman</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="col-nama">A</th>
+                <td>
+                  <input
+                    type="text"
+                    name="A_Juli_Jilid"
+                    aria-label="Jilid Juli A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Juli_Halaman"
+                    aria-label="Halaman Juli A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_Agustus_Jilid"
+                    aria-label="Jilid Agustus A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Agustus_Halaman"
+                    aria-label="Halaman Agustus A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_September_Jilid"
+                    aria-label="Jilid September A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_September_Halaman"
+                    aria-label="Halaman September A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_Oktober_Jilid"
+                    aria-label="Jilid Oktober A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Oktober_Halaman"
+                    aria-label="Halaman Oktober A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_November_Jilid"
+                    aria-label="Jilid November A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_November_Halaman"
+                    aria-label="Halaman November A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_Desember_Jilid"
+                    aria-label="Jilid Desember A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Desember_Halaman"
+                    aria-label="Halaman Desember A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_Januari_Jilid"
+                    aria-label="Jilid Januari A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Januari_Halaman"
+                    aria-label="Halaman Januari A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_Februari_Jilid"
+                    aria-label="Jilid Februari A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Februari_Halaman"
+                    aria-label="Halaman Februari A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_Maret_Jilid"
+                    aria-label="Jilid Maret A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Maret_Halaman"
+                    aria-label="Halaman Maret A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_April_Jilid"
+                    aria-label="Jilid April A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_April_Halaman"
+                    aria-label="Halaman April A"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="A_Mei_Jilid"
+                    aria-label="Jilid Mei A"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="A_Mei_Halaman"
+                    aria-label="Halaman Mei A"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="col-nama">B</th>
+                <td>
+                  <input
+                    type="text"
+                    name="B_Juli_Jilid"
+                    aria-label="Jilid Juli B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Juli_Halaman"
+                    aria-label="Halaman Juli B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_Agustus_Jilid"
+                    aria-label="Jilid Agustus B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Agustus_Halaman"
+                    aria-label="Halaman Agustus B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_September_Jilid"
+                    aria-label="Jilid September B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_September_Halaman"
+                    aria-label="Halaman September B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_Oktober_Jilid"
+                    aria-label="Jilid Oktober B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Oktober_Halaman"
+                    aria-label="Halaman Oktober B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_November_Jilid"
+                    aria-label="Jilid November B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_November_Halaman"
+                    aria-label="Halaman November B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_Desember_Jilid"
+                    aria-label="Jilid Desember B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Desember_Halaman"
+                    aria-label="Halaman Desember B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_Januari_Jilid"
+                    aria-label="Jilid Januari B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Januari_Halaman"
+                    aria-label="Halaman Januari B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_Februari_Jilid"
+                    aria-label="Jilid Februari B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Februari_Halaman"
+                    aria-label="Halaman Februari B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_Maret_Jilid"
+                    aria-label="Jilid Maret B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Maret_Halaman"
+                    aria-label="Halaman Maret B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_April_Jilid"
+                    aria-label="Jilid April B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_April_Halaman"
+                    aria-label="Halaman April B"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="B_Mei_Jilid"
+                    aria-label="Jilid Mei B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="B_Mei_Halaman"
+                    aria-label="Halaman Mei B"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="col-nama">J</th>
+                <td>
+                  <input
+                    type="text"
+                    name="J_Juli_Jilid"
+                    aria-label="Jilid Juli J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Juli_Halaman"
+                    aria-label="Halaman Juli J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_Agustus_Jilid"
+                    aria-label="Jilid Agustus J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Agustus_Halaman"
+                    aria-label="Halaman Agustus J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_September_Jilid"
+                    aria-label="Jilid September J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_September_Halaman"
+                    aria-label="Halaman September J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_Oktober_Jilid"
+                    aria-label="Jilid Oktober J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Oktober_Halaman"
+                    aria-label="Halaman Oktober J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_November_Jilid"
+                    aria-label="Jilid November J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_November_Halaman"
+                    aria-label="Halaman November J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_Desember_Jilid"
+                    aria-label="Jilid Desember J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Desember_Halaman"
+                    aria-label="Halaman Desember J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_Januari_Jilid"
+                    aria-label="Jilid Januari J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Januari_Halaman"
+                    aria-label="Halaman Januari J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_Februari_Jilid"
+                    aria-label="Jilid Februari J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Februari_Halaman"
+                    aria-label="Halaman Februari J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_Maret_Jilid"
+                    aria-label="Jilid Maret J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Maret_Halaman"
+                    aria-label="Halaman Maret J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_April_Jilid"
+                    aria-label="Jilid April J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_April_Halaman"
+                    aria-label="Halaman April J"
+                  />
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="J_Mei_Jilid"
+                    aria-label="Jilid Mei J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    name="J_Mei_Halaman"
+                    aria-label="Halaman Mei J"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      // Navigation behavior: switching tabs and handling links
+      const tabTahsin = document.getElementById("tab-tahsin");
+      const tabTahfidz = document.getElementById("tab-tahfidz");
+      const sectionTahsin = document.getElementById("section-tahsin");
+      const btnBeranda = document.getElementById("btn-beranda");
+
+      function activateTab(tabToActivate) {
+        if (tabToActivate === "tahsin") {
+          tabTahsin.classList.add("active");
+          tabTahsin.setAttribute("aria-selected", "true");
+          tabTahsin.tabIndex = 0;
+
+          tabTahfidz.classList.remove("active");
+          tabTahfidz.setAttribute("aria-selected", "false");
+          tabTahfidz.tabIndex = -1;
+
+          sectionTahsin.style.display = "block";
+        } else if (tabToActivate === "tahfidz") {
+          tabTahfidz.classList.add("active");
+          tabTahfidz.setAttribute("aria-selected", "true");
+          tabTahfidz.tabIndex = 0;
+
+          tabTahsin.classList.remove("active");
+          tabTahsin.setAttribute("aria-selected", "false");
+          tabTahsin.tabIndex = -1;
+
+          sectionTahsin.style.display = "none";
+        }
+      }
+
+      tabTahsin.addEventListener("click", (e) => {
+        e.preventDefault();
+        activateTab("tahsin");
+      });
+
+      tabTahfidz.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Navigate to another page for Tahfidz (placeholder)
+        window.location.href = "tahfidz.html";
+      });
+
+      btnBeranda.addEventListener("click", () => {
+        // Navigate back to home page (placeholder)
+        window.location.href = "index.html";
+      });
+
+      // Handle clicking month submit buttons
+      const buttons = document.querySelectorAll(".month-submit-btn");
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const month = button.closest("th").dataset.month;
+          if (!month) return;
+          const form = document.getElementById("form-perkembangan");
+          const formData = new FormData(form);
+          const filteredData = {};
+
+          // Filter inputs that contain the month name in the input name
+          for (const [key, value] of formData.entries()) {
+            if (key.includes(month)) {
+              filteredData[key] = value;
+            }
+          }
+
+          // For demo: show alert with data of the clicked month only
+          if (Object.keys(filteredData).length === 0) {
+            alert(`Tidak ada data yang diisi untuk bulan ${month}`);
+          } else {
+            alert(
+              `Data yang dikirim untuk bulan ${month}:\n` +
+                JSON.stringify(filteredData, null, 2)
+            );
+          }
+        });
+      });
+
+      // Initialize with Tahsin active
+      activateTab("tahsin");
+    </script>
+  </body>
+</html>

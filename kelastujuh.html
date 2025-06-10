@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Siswa & Halaqoh</title>
+    <link href="../../css/kelastujuh.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a
+        href="javascript:history.back()"
+        class="back-button"
+        aria-label="Kembali ke halaman sebelumnya"
+      >
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path d="M15 18l-6-6 6-6"></path>
+        </svg>
+        Kembali
+      </a>
+    </header>
+
+    <div class="app-wrapper">
+      <aside class="sidebar" aria-label="Sidebar Halaqoh">
+        <h2>Halaqoh</h2>
+        <ul class="halaqoh-list" role="list">
+          <li>Abu Bakar</li>
+          <li>Umar</li>
+          <li>Ali</li>
+          <li>Aisyah</li>
+          <li>Khadijah</li>
+          <li>Fatimah</li>
+        </ul>
+      </aside>
+
+      <main class="content" role="main">
+        <div class="container">
+          <div class="table-wrapper" role="region" aria-label="Data siswa">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">NIS/NISN</th>
+                  <th scope="col">Nama Lengkap</th>
+                  <th scope="col">Tempat Tanggal Lahir</th>
+                  <th scope="col">Nama Ayah</th>
+                  <th scope="col">Nama Ibu</th>
+                  <th scope="col">Kelas</th>
+                  <th scope="col">Nama Halaqoh</th>
+                  <th scope="col">Nama Pembimbing Halaqoh</th>
+                  <th scope="col">Awal Periode Pembelajaran</th>
+                  <th scope="col">Materi Awal Pembelajaran</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1234567890 / 9988776655</td>
+                  <td>Ahmad Fauzi</td>
+                  <td>Jakarta, 01 Januari 2005</td>
+                  <td>Budi Santoso</td>
+                  <td>Sri Mulyani</td>
+                  <td>Kelas VII</td>
+                  <td>Al-Azhar</td>
+                  <td>Ust. Hasan</td>
+                  <td>01 Juli 2023</td>
+                  <td>Pengantar Fiqh</td>
+                  <td>
+                    <button
+                      class="action-btn edit-btn"
+                      aria-label="Edit data Ahmad Fauzi"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      class="action-btn delete-btn"
+                      aria-label="Hapus data Ahmad Fauzi"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1478523690 / 1234567890</td>
+                  <td>Siti Aminah</td>
+                  <td>Bandung, 15 Februari 2006</td>
+                  <td>Hasanudin</td>
+                  <td>Nurhayati</td>
+                  <td>Kelas VIII</td>
+                  <td>An-Nur</td>
+                  <td>Ust. Ahmad</td>
+                  <td>01 Juli 2023</td>
+                  <td>Pengantar Tauhid</td>
+                  <td>
+                    <button
+                      class="action-btn edit-btn"
+                      aria-label="Edit data Siti Aminah"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      class="action-btn delete-btn"
+                      aria-label="Hapus data Siti Aminah"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1357924680 / 1122334455</td>
+                  <td>Fajar Pratama</td>
+                  <td>Surabaya, 10 Maret 2004</td>
+                  <td>Rizal</td>
+                  <td>Yuliana</td>
+                  <td>Kelas IX</td>
+                  <td>Al-Falah</td>
+                  <td>Ust. Zainal</td>
+                  <td>01 Juli 2023</td>
+                  <td>Pengantar Tafsir</td>
+                  <td>
+                    <button
+                      class="action-btn edit-btn"
+                      aria-label="Edit data Fajar Pratama"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      class="action-btn delete-btn"
+                      aria-label="Hapus data Fajar Pratama"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

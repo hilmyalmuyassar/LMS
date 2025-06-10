@@ -1,0 +1,276 @@
+/* Base body text styling */
+body {
+  background-color: #ffffff;
+  color: #6b7280; /* neutral gray */
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Centered max-width container (matches Tailwind max-w-7xl = 80rem = 1280px) */
+#root,
+main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Hero Section Title */
+section[aria-label="Judul Halaman Detail Profil Santri"] h1#page-title {
+  font-weight: 700;
+  font-size: 3rem; /* 48px */
+  color: #111827; /* dark gray for strong contrast */
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  user-select: none;
+}
+
+/* Tabs navigation container */
+nav[aria-label="Navigasi Tab Profil Santri"] {
+  border-bottom: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar styling */
+nav.tabs::-webkit-scrollbar {
+  height: 6px;
+}
+nav.tabs::-webkit-scrollbar-thumb {
+  background-color: #a1a1aa; /* subtle gray */
+  border-radius: 3px;
+}
+
+/* Tab list */
+nav ul[role="tablist"] {
+  display: flex;
+  gap: 1rem;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Tab buttons base */
+nav button[role="tab"] {
+  background: none;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  color: #6b7280; /* gray-500 */
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  outline-offset: 2px;
+  white-space: nowrap;
+}
+
+/* Tab hover and focus states */
+nav button[role="tab"]:hover:not([aria-selected="true"]),
+nav button[role="tab"]:focus-visible {
+  color: #4f46e5; /* indigo-600 */
+  outline: none;
+  box-shadow: 0 0 0 2px #4f46e5;
+}
+
+/* Active tab */
+nav button[role="tab"][aria-selected="true"] {
+  color: #4338ca; /* indigo-700 */
+  border-bottom: 4px solid #4f46e5; /* indigo-600 */
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Tab panels container */
+section[aria-label="Data Umum"],
+section[aria-label="Riwayat Hafalan"],
+section[aria-label="Nilai Tahsin"],
+section[aria-label="Catatan & Target"],
+section[aria-label="Tindakan"] {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1), 0 1px 2px rgb(0 0 0 / 0.06);
+  padding: 2rem;
+  color: #374151; /* gray-700 */
+  font-weight: 500;
+}
+
+/* Forms in tabs */
+/* Labels */
+form label {
+  font-weight: 600;
+  color: #374151;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs and textareas */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  background-color: #f9fafb; /* gray-50 */
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.06);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4f46e5; /* indigo-600 */
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 0.4);
+  background-color: #fff;
+}
+
+/* Disabled inputs and textarea styles */
+input[disabled],
+textarea[disabled] {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+  border-color: #d1d5db;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px; /* ensure horizontal scroll on small screens */
+}
+
+/* Table caption (screen reader only) */
+caption {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+/* Table head */
+thead {
+  background-color: #f9fafb; /* gray-50 */
+}
+
+thead th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6b7280; /* gray-500 */
+  text-transform: uppercase;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Table body */
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+tbody td {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #374151; /* gray-700 */
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+/* Accordion container */
+#accordion-tindakan {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Accordion items */
+#accordion-tindakan > div {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1), 0 1px 2px rgb(0 0 0 / 0.06);
+  background-color: #fff;
+}
+
+/* Accordion button base */
+#accordion-tindakan button {
+  width: 100%;
+  background-color: #f9fafb;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #374151;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.25s ease;
+  outline-offset: 2px;
+}
+
+/* Accordion button hover and focus */
+#accordion-tindakan button:hover,
+#accordion-tindakan button:focus-visible {
+  background-color: #e0e7ff; /* indigo-100 */
+  outline: none;
+  box-shadow: 0 0 0 2px #4f46e5;
+}
+
+/* Accordion button expanded state - rotate icon */
+#accordion-tindakan button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* Accordion panel */
+#accordion-tindakan > div > div {
+  padding: 1rem 1.5rem;
+  color: #4b5563; /* gray-600 */
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  section[aria-label="Judul Halaman Detail Profil Santri"] h1#page-title {
+    font-size: 2.25rem; /* 36px */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  nav ul[role="tablist"] {
+    gap: 0.5rem;
+  }
+
+  nav button[role="tab"] {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  tbody td,
+  thead th {
+    padding: 0.5rem 0.75rem;
+  }
+}

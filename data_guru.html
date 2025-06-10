@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Guru - Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/data_guru.css" />
+  </head>
+  <body>
+    <header>
+      <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+          <div class="logo">Admin Dashboard</div>
+          <div class="nav-links" role="menubar" aria-label="Main menu">
+            <a
+              href="../dashboard.html"
+              role="menuitem"
+              aria-label="Kembali ke beranda"
+              >Beranda</a
+            >
+            <a
+              href="data-guru.html"
+              role="menuitem"
+              aria-current="page"
+              aria-label="Halaman data guru"
+              >Data Guru</a
+            >
+            <a
+              href="data-halaqoh.html"
+              role="menuitem"
+              aria-label="Halaman data halaqoh"
+              >Data Halaqoh</a
+            >
+            <a href="ujian.html" role="menuitem" aria-label="Halaman ujian"
+              >Ujian</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container" role="main">
+      <h1>Kelola Data Guru</h1>
+
+      <section class="form-card" aria-label="Form input data guru">
+        <h2>Input / Update Data Guru</h2>
+        <form id="guru-form" novalidate>
+          <div class="form-grid">
+            <div>
+              <label for="nama-guru"
+                >Nama Guru
+                <span aria-hidden="true" style="color: red">*</span></label
+              >
+              <input
+                type="text"
+                id="nama-guru"
+                name="namaGuru"
+                required
+                autocomplete="off"
+                placeholder="Masukkan nama guru"
+              />
+            </div>
+            <div>
+              <label for="tanggal-lahir"
+                >Tanggal Lahir
+                <span aria-hidden="true" style="color: red">*</span></label
+              >
+              <input
+                type="date"
+                id="tanggal-lahir"
+                name="tanggalLahir"
+                required
+              />
+            </div>
+            <div style="grid-column: 1 / -1">
+              <label for="alamat"
+                >Alamat
+                <span aria-hidden="true" style="color: red">*</span></label
+              >
+              <input
+                type="text"
+                id="alamat"
+                name="alamat"
+                required
+                autocomplete="off"
+                placeholder="Masukkan alamat lengkap"
+              />
+            </div>
+            <div>
+              <label for="no-hp"
+                >No. HP
+                <span aria-hidden="true" style="color: red">*</span></label
+              >
+              <input
+                type="tel"
+                id="no-hp"
+                name="noHp"
+                pattern="[0-9+ ]{6,15}"
+                autocomplete="off"
+                required
+                placeholder="contoh: +628123456789"
+              />
+            </div>
+            <div>
+              <label for="status-sertifikasi"
+                >Status Sertifikasi
+                <span aria-hidden="true" style="color: red">*</span></label
+              >
+              <select id="status-sertifikasi" name="statusSertifikasi" required>
+                <option value="" disabled selected>Pilih status</option>
+                <option value="Belum">Belum</option>
+                <option value="Sedang">Sedang</option>
+                <option value="Sudah">Sudah</option>
+              </select>
+            </div>
+            <div>
+              <label for="sertifikat-file"
+                >Upload Sertifikat (PDF)
+                <span aria-hidden="true" style="color: red">*</span></label
+              >
+              <input
+                type="file"
+                id="sertifikat-file"
+                name="sertifikatFile"
+                accept="application/pdf"
+                required
+                aria-describedby="fileHelp"
+              />
+              <small
+                id="fileHelp"
+                style="color: var(--color-text); font-size: 0.85rem"
+                >Maks 5MB, format PDF</small
+              >
+            </div>
+            <div>
+              <label for="awal-bergabung"
+                >Awal Bergabung
+                <span aria-hidden="true" style="color: red">*</span></label
+              >
+              <input
+                type="date"
+                id="awal-bergabung"
+                name="awalBergabung"
+                required
+              />
+            </div>
+          </div>
+          <div style="margin-top: 2rem">
+            <button type="submit" class="button-primary" id="submit-btn">
+              Simpan Data
+            </button>
+            <button type="reset" class="button-secondary">Reset Form</button>
+          </div>
+        </form>
+      </section>
+
+      <section aria-label="Daftar data guru" style="max-width: 100%">
+        <div
+          class="table-container"
+          role="region"
+          aria-live="polite"
+          aria-relevant="additions removals"
+        >
+          <table
+            id="guru-table"
+            aria-describedby="guru-table-desc"
+            tabindex="0"
+          >
+            <caption
+              id="guru-table-desc"
+              style="
+                caption-side: top;
+                font-weight: 600;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                color: var(--color-primary);
+              "
+            >
+              Daftar Data Guru
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Nama Guru</th>
+                <th scope="col">Tanggal Lahir</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">No. HP</th>
+                <th scope="col">Status Sertifikasi</th>
+                <th scope="col">Sertifikat</th>
+                <th scope="col">Awal Bergabung</th>
+                <th scope="col" style="width: 100px">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic rows will be injected here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        const form = document.getElementById("guru-form");
+        const tableBody = document.querySelector("#guru-table tbody");
+        const submitBtn = document.getElementById("submit-btn");
+        let editIndex = null;
+        let dataGuru = [];
+
+        function formatDate(dateStr) {
+          if (!dateStr) return "";
+          const d = new Date(dateStr);
+          const day = String(d.getDate()).padStart(2, "0");
+          const month = String(d.getMonth() + 1).padStart(2, "0");
+          const year = d.getFullYear();
+          return `${day}-${month}-${year}`;
+        }
+
+        function renderTable() {
+          tableBody.innerHTML = "";
+          if (dataGuru.length === 0) {
+            const emptyRow = document.createElement("tr");
+            emptyRow.innerHTML =
+              '<td colspan="8" style="text-align:center; padding:1rem; color:var(--color-text)">Belum ada data guru.</td>';
+            tableBody.appendChild(emptyRow);
+            return;
+          }
+          dataGuru.forEach((guru, i) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+          <td>${guru.namaGuru}</td>
+          <td>${formatDate(guru.tanggalLahir)}</td>
+          <td>${guru.alamat}</td>
+          <td>${guru.noHp}</td>
+          <td>${guru.statusSertifikasi}</td>
+          <td><a href="${
+            guru.sertifikatUrl
+          }" target="_blank" rel="noopener noreferrer" aria-label="Lihat sertifikat ${
+              guru.namaGuru
+            }">Lihat PDF</a></td>
+          <td>${formatDate(guru.awalBergabung)}</td>
+          <td>
+            <button class="action-btn action-edit" aria-label="Edit data guru ${
+              guru.namaGuru
+            }" data-index="${i}">Edit</button>
+            <button class="action-btn action-delete" aria-label="Hapus data guru ${
+              guru.namaGuru
+            }" data-index="${i}">Hapus</button>
+          </td>
+        `;
+            tableBody.appendChild(tr);
+          });
+        }
+        function resetForm() {
+          form.reset();
+          editIndex = null;
+          submitBtn.textContent = "Simpan Data";
+        }
+        function fillForm(guru) {
+          form["namaGuru"].value = guru.namaGuru;
+          form["tanggalLahir"].value = guru.tanggalLahir;
+          form["alamat"].value = guru.alamat;
+          form["noHp"].value = guru.noHp;
+          form["statusSertifikasi"].value = guru.statusSertifikasi;
+          form["sertifikatFile"].value = "";
+          form["awalBergabung"].value = guru.awalBergabung;
+          submitBtn.textContent = "Perbarui Data";
+        }
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          const formData = new FormData(form);
+
+          const fileInput = form["sertifikatFile"];
+          if (fileInput.files.length === 0 && editIndex === null) {
+            alert("Silakan upload file sertifikat dalam format PDF.");
+            fileInput.focus();
+            return;
+          }
+          if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            if (file.type !== "application/pdf") {
+              alert("Format file harus PDF.");
+              fileInput.focus();
+              return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+              alert("Ukuran file maksimal 5MB.");
+              fileInput.focus();
+              return;
+            }
+          }
+
+          const guru = {
+            namaGuru: formData.get("namaGuru").trim(),
+            tanggalLahir: formData.get("tanggalLahir"),
+            alamat: formData.get("alamat").trim(),
+            noHp: formData.get("noHp").trim(),
+            statusSertifikasi: formData.get("statusSertifikasi"),
+            awalBergabung: formData.get("awalBergabung"),
+            sertifikatUrl: "",
+          };
+          function processFileAndContinue(file, callback) {
+            if (!file) {
+              callback("");
+              return;
+            }
+            const url = URL.createObjectURL(file);
+            callback(url);
+          }
+          const file = fileInput.files[0] || null;
+          processFileAndContinue(file, (url) => {
+            if (url) guru.sertifikatUrl = url;
+            if (editIndex !== null) {
+              if (!url) {
+                guru.sertifikatUrl = dataGuru[editIndex].sertifikatUrl;
+              }
+              dataGuru[editIndex] = guru;
+              editIndex = null;
+            } else {
+              dataGuru.push(guru);
+            }
+            renderTable();
+            resetForm();
+          });
+        });
+
+        form.addEventListener("reset", () => {
+          resetForm();
+        });
+
+        tableBody.addEventListener("click", (e) => {
+          if (e.target.classList.contains("action-edit")) {
+            const i = +e.target.dataset.index;
+            if (i >= 0 && i < dataGuru.length) {
+              fillForm(dataGuru[i]);
+              editIndex = i;
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              form["namaGuru"].focus();
+            }
+          } else if (e.target.classList.contains("action-delete")) {
+            const i = +e.target.dataset.index;
+            if (i >= 0 && i < dataGuru.length) {
+              if (confirm(`Hapus data guru "${dataGuru[i].namaGuru}"?`)) {
+                if (dataGuru[i].sertifikatUrl) {
+                  URL.revokeObjectURL(dataGuru[i].sertifikatUrl);
+                }
+                dataGuru.splice(i, 1);
+                renderTable();
+                resetForm();
+              }
+            }
+          }
+        });
+
+        renderTable();
+      })();
+    </script>
+  </body>
+</html>

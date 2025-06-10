@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perkembangan Siswa</title>
+    <link rel="stylesheet" href="../../css/halaqohtahfidz1.css" />
+  </head>
+  <body>
+    <main class="container" role="main">
+      <header>
+        <button
+          class="btn-beranda"
+          type="button"
+          aria-label="Beranda"
+          onclick="window.location.href='../tahsin/ps_halaqoh1.html'"
+        >
+          Kembali
+        </button>
+        <div class="profile" role="complementary" aria-label="Profil Guru">
+          <img src="foto_profil.jpg" alt="Foto Profil Guru" />
+          <h2>Nama Guru</h2>
+        </div>
+        <h1>Perkembangan Siswa</h1>
+      </header>
+
+      <nav aria-label="Navigasi Perkembangan Siswa">
+        <ul>
+          <li>
+            <a
+              href="../Tahsin/ps_halaqoh1.html"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+              >Tahsin</a
+            >
+          </li>
+          <li>
+            <a href="halaqohtahfidz1.html" role="tab" tabindex="-1">Tahfidz</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="semester1" tabindex="0" aria-labelledby="semester1-heading">
+        <h2 id="semester1-heading">Semester I</h2>
+        <table aria-describedby="table-desc-sem1">
+          <caption id="table-desc-sem1" class="sr-only">
+            Tabel perkembangan siswa dengan kolom nama, dan input Surat serta
+            Ayat untuk bulan Juli hingga Desember.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" rowspan="2">Nama</th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Juli">
+                  Juli
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Agustus">
+                  Agustus
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="September">
+                  September
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Oktober">
+                  Oktober
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="November">
+                  November
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Desember">
+                  Desember
+                </button>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Desember untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Desember untuk A"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Desember untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Desember untuk B"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Desember untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Desember untuk C"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Semester 2 -->
+      <section id="semester2" tabindex="0" aria-labelledby="semester2-heading">
+        <h2 id="semester2-heading">Semester II</h2>
+        <table aria-describedby="table-desc-sem2">
+          <caption id="table-desc-sem2" class="sr-only">
+            Tabel perkembangan siswa dengan kolom nama, dan input Surat serta
+            Ayat untuk bulan Juli hingga Desember.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" rowspan="2">Nama</th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Juli">
+                  Juli
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Agustus">
+                  Agustus
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="September">
+                  September
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Oktober">
+                  Oktober
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="November">
+                  November
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Desember">
+                  Desember
+                </button>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+              <th scope="col">Surat</th>
+              <th scope="col">Ayat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Desember untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Desember untuk A"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Desember untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Desember untuk B"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Surat"
+                  aria-label="Surat Desember untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Ayat"
+                  aria-label="Ayat Desember untuk C"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

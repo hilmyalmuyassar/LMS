@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap");
+
+:root {
+  --color-bg: #ffffff;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-card-bg: #f9fafb;
+  --color-shadow: rgba(0, 0, 0, 0.05);
+  --border-radius: 0.75rem;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  scroll-padding-top: 5rem;
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+a:hover,
+a:focus {
+  color: #2563eb; /* Tailwind blue-600 */
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5rem;
+  background: var(--color-bg);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: var(--color-text-primary);
+  z-index: 1000;
+  user-select: none;
+}
+
+header .logo {
+  cursor: default;
+}
+
+header nav a {
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+  background-color: #e0e7ff; /* Tailwind indigo-100 */
+  outline: none;
+  transform: scale(1.05);
+  color: #4338ca; /* Tailwind indigo-700 */
+  box-shadow: 0 2px 8px rgb(67 56 202 / 0.3);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin: 0;
+  user-select: none;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 2rem 0;
+  font-weight: 600;
+  user-select: none;
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.class-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 14px var(--color-shadow);
+  padding: 1.75rem 2.25rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  user-select: none;
+}
+
+.class-card:hover,
+.class-card:focus {
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
+  border-color: #2563eb;
+  transform: translateY(-6px);
+  outline: none;
+}
+
+.class-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: #2563eb;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+  user-select: text;
+}
+
+.class-info {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  font-weight: 600;
+  user-select: text;
+  white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 4.5rem;
+  }
+  header {
+    font-size: 1.25rem;
+    padding: 0 1.25rem;
+  }
+  .container {
+    padding: 0 1.25rem 2rem;
+    gap: 3rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.25rem, 8vw, 3.5rem);
+  }
+  .classes-grid {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  header {
+    padding: 0 1rem;
+    font-size: 1.125rem;
+  }
+  .container {
+    padding: 0 1rem 2rem;
+  }
+}

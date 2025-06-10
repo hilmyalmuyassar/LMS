@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perkembangan Siswa</title>
+    <link rel="stylesheet" href="../../css/halaqoh1.css" />
+  </head>
+  <body>
+    <main class="container" role="main">
+      <header>
+        <button
+          class="btn-beranda"
+          type="button"
+          aria-label="Beranda"
+          onclick="window.location.href='../../index.html'"
+        >
+          Beranda
+        </button>
+        <div class="profile" role="complementary" aria-label="Profil Guru">
+          <img src="foto_profil.jpg" alt="Foto Profil Guru" />
+          <h2>Nama Guru</h2>
+        </div>
+        <h1>Perkembangan Siswa</h1>
+      </header>
+
+      <nav aria-label="Navigasi Perkembangan Siswa">
+        <ul>
+          <li>
+            <a
+              href="ps_halaqoh1.html"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+              >Tahsin</a
+            >
+          </li>
+          <li>
+            <a href="../Tahfidz/halaqohtahfidz1.html" role="tab" tabindex="-1"
+              >Tahfidz</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <section id="tahsin" tabindex="0" aria-labelledby="tahsin-heading">
+        <h2 id="tahsin-heading">Semester I</h2>
+        <table aria-describedby="table-desc">
+          <caption id="table-desc" class="sr-only">
+            Tabel perkembangan siswa dengan kolom nama, dan input Jilid serta
+            Halaman untuk bulan Juli hingga Desember.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" rowspan="2">Nama</th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Juli">
+                  Juli
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Agustus">
+                  Agustus
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="September">
+                  September
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Oktober">
+                  Oktober
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="November">
+                  November
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Desember">
+                  Desember
+                </button>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Desember untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Desember untuk A"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Desember untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Desember untuk B"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Desember untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Desember untuk C"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- semester 2 -->
+      <section id="tahsin" tabindex="0" aria-labelledby="tahsin-heading">
+        <h2 id="tahsin-heading">Semester II</h2>
+        <table aria-describedby="table-desc">
+          <caption id="table-desc" class="sr-only">
+            Tabel perkembangan siswa dengan kolom nama, dan input Jilid serta
+            Halaman untuk bulan Juli hingga Desember.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" rowspan="2">Nama</th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Juli">
+                  Juli
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Agustus">
+                  Agustus
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="September">
+                  September
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Oktober">
+                  Oktober
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="November">
+                  November
+                </button>
+              </th>
+              <th scope="colgroup" colspan="2">
+                <button type="button" class="month-btn" aria-label="Desember">
+                  Desember
+                </button>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+              <th scope="col">Jilid</th>
+              <th scope="col">Halaman</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Juli untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Agustus untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman September untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Oktober untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman November untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Desember untuk A"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Desember untuk A"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Juli untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Agustus untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman September untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Oktober untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman November untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Desember untuk B"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Desember untuk B"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Juli untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Agustus untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman September untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Oktober untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman November untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Jilid"
+                  aria-label="Jilid Desember untuk C"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Halaman"
+                  aria-label="Halaman Desember untuk C"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
